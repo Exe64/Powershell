@@ -1,0 +1,17 @@
+#
+# Script Windows PowerShell pour le d�ploiement d�AD DS
+#
+
+Import-Module ADDSDeployment
+Install-ADDSForest `
+-CreateDnsDelegation:$false `
+-DatabasePath "C:\VOTRE\REPERTOIRE" `
+-DomainMode "Win2012R2" `
+-DomainName "VOTRE-NOM-DE.DOMAINE" `
+-DomainNetbiosName "VOTRE-NOM-DE-DOMAINE" `
+-ForestMode "Win2012R2" `
+-InstallDns:$true `
+-LogPath "C:\VOTRE\REPERTOIRE" `
+-NoRebootOnCompletion:$false `
+-SysvolPath "C:\VOTRE\REPERTOIRE" `
+-Force:$true
