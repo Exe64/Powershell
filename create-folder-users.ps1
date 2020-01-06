@@ -2,24 +2,25 @@
 #- CREATE A FOLDER FOR EACH USER IN create-folder-users-db.csv
 #- SETUP PERMISSION ON EACH FOLDER WITH FullControl / NTFSOwner
 
+#IF NTFSSECURITY MODULE IS NOT INSTALLED ON YOUR SYSTEM
 #Install-Module NTFSSecurity	
 
 #VARIABLES
 
-  $Server = "PATH\TO\PARENT\FOLDER"
-  $Users = import-csv -path "PATH\TO\create-folder-users-db.csv"
-  $Domain = "DOMAIN"
+$Server = "C:\PATH\TO\PARENT\FOLDER"
+$Users = ("user1","user2","user3")
+$Domain = "DOMAIN"
 	
 #SCRIPT
 
 foreach($User in $Users)
-  {
-  #FOLDER CREATION
-  New-Item "$Server\$User" -ItemType Directory
+{
+#FOLDER CREATION
+New-Item "$Server\$User" -ItemType Directory
 
-  #NTFS PERMISSIONS
-  Add-NTFSAccess -Path "$Server\$User" -Account "$User@$Domain" -AccessRights FullControl
+#NTFS PERMISSIONS
+Add-NTFSAccess -Path "$Server\$User" -Account "$User@$Domain" -AccessRights FullControl
 
-  #FOLDER OWNER
-  Set-NTFSOwner -Path "$Server\$User" -Account "$User@$Domain"
-  }
+#FOLDER OWNER
+Set-NTFSOwner -Path "$Server\$User" -Account "$User@$Domain"
+}
