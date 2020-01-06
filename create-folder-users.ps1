@@ -8,7 +8,7 @@
 
   $Server = "PATH\TO\PARENT\FOLDER"
   $Users = import-csv -path "PATH\TO\create-folder-users-db.csv"
-  $Domain = "mairie.local"
+  $Domain = "DOMAIN"
 	
 #SCRIPT
 
