@@ -2,7 +2,7 @@
 
 #VARIABLES
 
-$ou = "OU=Stations,OU=diades,DC=setec,DC=local"
+$ou = "OU=WHATE,OU=YOU,OU=WANT,DC=TO,DC=EXPORT"
 $path = c:\PATH\TO\ADcomputerslist.csv
 
 #SCRIPT
