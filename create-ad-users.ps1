@@ -1,11 +1,11 @@
 #THIS SCRIPT IS BUILT TO :
-#- CREATE USERS FROM A FILE (SEE users-db.csv) IN A SPECIFIC OU
+#- CREATE USERS FROM A FILE (SEE create-ad-users-db.csv) IN A SPECIFIC OU
 #- ADD USERS ON SPECIFIC GROUPS
 #- CREATE A SCAN (OR PERSONNAL) FOLDER FOR EACH USER
 
 #VARIABLES TO MODIFY
 
-  $users = import-csv -path "PATH\TO\users-db.csv" -delimiter ";"
+  $users = import-csv -path "PATH\TO\create-ad-users-db.csv" -delimiter ";"
   $scan = "PATH\TO\SCAN\FOLDER"
   $domain = "DOMAIN"
   $group1 = "GROUP1"
